@@ -1,0 +1,60 @@
+.frame:before{
+    border-left: solid 2px #fff;
+    border-top: solid 2px #fff;
+}
+.frame2:before{
+	border-right: solid 2px #fff;
+    border-top: solid 2px #fff;
+}
+.frame:after{
+    border-right: solid 2px #fff;
+    border-bottom: solid 2px #fff;
+}
+.frame2:after{
+	border-left: solid 2px #fff;
+    border-bottom: solid 2px #fff;
+}
+
+.frame, .frame2{
+	width: 75vw;
+	height: 80vh;
+}
+
+
+.openbtn1{
+	top: 7%;
+}
+
+img#frame-img{
+	width: 8vw;
+}
+
+.header_nav{
+	left: -14%;
+}
+
+#splash_logo.fixed{
+	top: 3%;
+}
+
+
+
+#rectangle{
+	height: 2.5vh;
+}
+
+
+.items{
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+#page3 p{
+	margin-left: 0;
+	margin-top: 3vh;
+}
+
+.photo_images{
+	width: 100%;
+}
+

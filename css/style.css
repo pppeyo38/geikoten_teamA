@@ -1,0 +1,444 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+@font-face{
+    font-family: "NYCD";
+    src: url(../font/NothingYouCouldDo.ttf);
+}
+
+@font-face{
+	font-family: "Electrolize";
+	src: url(../font/Electrolize-Regular.ttf);
+}
+
+@font-face{
+    font-family: "Klee";
+    src: url(../font/Klee-medium.ttf);
+    font-weight: 600;
+}
+
+
+.bgimg-slider {
+	width: 100vw;
+	height: 100vh;
+	background-position: center center;
+    background-size: cover;
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.frame, .frame2{
+	width: 80vw;
+	height: 85vh;
+	position: relative;
+}
+.frame{
+	margin: 8vw;
+}
+.frame:before, .frame:after,
+.frame2:before, .frame2:after{
+    content:'';
+    width: 10vw;
+    height: 10vw;
+    position: absolute;
+    display: inline-block;
+	z-index: 99;
+}
+.frame:before{
+    border-left: solid 4px #fff;
+    border-top: solid 4px #fff;
+    top:0;
+    left: 0;
+}
+.frame2:before{
+	border-right: solid 4px #fff;
+    border-top: solid 4px #fff;
+    top:0;
+    right: 0;
+}
+.frame:after{
+    border-right: solid 4px #fff;
+    border-bottom: solid 4px #fff;
+    bottom:0;
+    right: 0;
+}
+.frame2:after{
+	border-left: solid 4px #fff;
+    border-bottom: solid 4px #fff;
+    bottom:0;
+    left: 0;
+}
+
+#frame-img{
+	position: absolute;
+	z-index: 110;
+	top: 4vw;
+	right: 4vw;
+}
+
+.header_nav{
+	position: absolute;
+	left: -9%;
+	top: 50%;
+	transform: translate(0,-50%);
+	z-index: 111;
+}
+
+.header_nav ul{
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.header_nav li{
+	margin: 50% 0;
+}
+
+.header_nav a {
+	color: #fff;
+	font-family: "Electrolize";
+	text-decoration: none;
+	transition: all 0.3s;
+}
+
+#right_top{
+	color: red;
+	transition: all 0.3s;
+}
+
+#right_top.change{
+	color: #fff;
+	transition: all 0.3s;
+}
+
+#right_about.change{
+	color: red;
+	transition: all 0.3s;
+}
+
+#right_photo.change{
+	color: red;
+	transition: all 0.3s;
+}
+
+#g-nav{
+    /* position: absolute; */
+  	z-index: -10;
+	opacity: 0;
+  	top:0;
+  	width:100%;
+    height: 100%;
+  	background: #161616;
+  	transition: all 0.3s;
+}
+
+#g-nav2{
+	content: '';
+	z-index: -10;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#g-nav ul{
+	font-size: 31px;
+}
+
+#g-nav.active{
+	opacity: 1;
+	z-index: 97;
+	position: absolute;
+	transition: all 0.3s;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+    display: none;
+    position: absolute;
+    z-index: 99;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+#g-nav.active ul {
+    display: block;
+}
+
+#g-nav li{
+	margin: 6vh;
+	list-style: none;
+	text-align: center;
+}
+
+#g-nav li a{
+	color: #fff;
+	text-decoration: none;
+	font-family: "Electrolize";
+	padding:10px;
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+}
+
+#g-nav.active li a:hover{
+	color: red;
+	transition: all 0.3s;
+}
+
+.openbtn1{
+	position: absolute;
+	z-index: 100;
+	top: 6.7vw;
+	right: 4.2vw;
+	cursor: pointer;
+	width: 4vw;
+	height: 5vw;
+  }
+
+.openbtn1 span{
+	display: inline-block;
+	transition: all .4s;
+	position: absolute;
+	height: 2px;
+	background-color: #fff;
+	width: 100%;
+}
+
+.openbtn1 span:nth-of-type(1) {
+	top: 15px;
+}
+.openbtn1 span:nth-of-type(2) {
+	top: 25px;
+}
+.openbtn1 span:nth-of-type(3) {
+	top: 35px;
+}
+
+.openbtn1.active span:nth-of-type(1) {
+	top: 18px;
+	/* left: 25px; */
+	transform: translateY(6px) rotate(-45deg);
+	width: 100%;
+}
+.openbtn1.active span:nth-of-type(2) {
+	opacity: 0;
+}
+.openbtn1.active span:nth-of-type(3){
+	top: 30px;
+	/* left: 25px; */
+	transform: translateY(-6px) rotate(45deg);
+	width: 100%;
+}
+
+.menu_bar img{
+	position: absolute;
+	left: 0%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 111;
+}
+
+.header_nav{
+	transition: all 0.3s;
+}
+
+.menu_bar.invisible{
+	opacity: 0;
+	transition: all 0.3s;
+}
+
+.header_nav.invisible{
+	opacity: 0;
+	transition: all 0.3s;
+}
+
+.container{
+	position: absolute;
+	overflow: auto;
+  	scroll-snap-type: y mandatory;
+  	height: 100vh;
+	width: 100vw;
+	text-align: center;
+	color: #fff;
+}
+
+.page{
+	scroll-snap-align: start;
+ 	height: 100vh;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: Klee;
+}
+
+#splash_logo{
+	position: relative;
+	width: 60vw;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+#splash_logo_wrap{
+	display: inline-block;
+}
+
+#splash_logo_wrap.fixed{
+	position: fixed;
+	top: 8%;
+	z-index: 1000;
+}
+
+#splash_logo svg{
+	position: absolute;
+	width: 90%;
+	margin-bottom: 0.6%;
+}
+
+#rectangle{
+	width: 90%;
+	height: 5vh;
+	transform: skewX(-25deg);
+	background: black;
+	transition: all 0.7s;
+}
+
+#rectangle.delete{
+	opacity: 0;
+	transition: all 0.7s;
+}
+
+#page1-scroll{
+	position: absolute;
+	bottom: 8vh;
+}
+
+#page2{
+	background-color: #161616;
+}
+
+#page2 p{
+	font-size: 21px;
+	font-family: "Klee";
+}
+
+#page3{
+	/* text-align: left; */
+	height: 100vh;
+	scroll-snap-align: start;
+}
+
+#page3 p{
+	text-align: left;
+	font-family: "Klee";
+	margin-left: 2vw;
+	font-size: 21px;
+}
+
+.horizon_album{
+	background-color: #161616;
+	display: flex;
+	align-items: center;
+	height: 100vh;
+	overflow-x: scroll;
+}
+
+section.album_page{
+	white-space: nowrap;
+	min-width: 100%;
+	height: 50vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* フォトページのうしろ */
+.content_bgJILL{
+	background-image: url(../images/bgJILL.jpg);
+}
+
+.content_bgED{
+	background-image: url(../images/bgEDRN.jpg);
+}
+
+.content_bgKR{
+	background-image: url(../images/bgMRKR.jpg);
+}
+
+.content_bgPY{
+	background-image: url(../images/bgPEYO.jpg);
+}
+
+.content_bgPN{
+	background-image: url(../images/bgPIN.jpg);
+}
+
+.content{
+	width: 100vw;
+	height: 40vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.items{
+	display: flex;
+	align-items: flex-end;
+}
+
+.photo_images{
+	width: 50%;
+}
+
+.photo_images img{
+	width: 100%;
+	height: 100%;
+}
+
+#page1.fixed, #page2.fixed{
+	position: fixed;
+	opacity: 0;
+}
+
+#rear{
+	display: flex;
+	flex-direction: row;
+}
+
+section.album_pageR{
+	white-space: nowrap;
+	min-width: 100vw;
+	height: 50vh;
+	display: flex;
+	align-items: center;
+}
+
+/* jsで追加するクラス */
+.invisible{
+	opacity: 0;
+}
+
+
+#mask .st0{
+    fill:none;
+    stroke:#fff;
+	color: #fff;
+    stroke-width:90;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-miterlimit:10;
+    stroke-dasharray: 1500;
+    stroke-dashoffset:1500;
+}
+
